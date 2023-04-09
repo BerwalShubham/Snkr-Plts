@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import comparelogo from "../assets/svg/compareLogo.svg";
 import sharelogo from "../assets/svg/share.svg";
@@ -15,37 +15,86 @@ import redblack from "../assets/png/redBlackshoes.png";
 import star from "../assets/svg/star.svg";
 
 const ProductDetail = () => {
+  const [quantity, setquantity] = useState(1);
+  const [product, setproduct] = useState("0");
+
+  let add = () => {
+    setquantity(quantity + 1);
+  };
+  let subtract = () => {
+    if (quantity === 1) {
+      setquantity(1);
+    } else {
+      setquantity(quantity - 1);
+    }
+  };
   return (
-    <section className="py-5">
+    <section className="py-5 overflow_hide">
       <Container>
-        <Row className="align-items-center">
+        <Row
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+          className="align-items-center"
+        >
           <Col xxl={6} xl={5} className="text-center text-xl-start">
-            <img className="red-jordan" src={redjordan} alt="shoes" />
+            <img
+              className={
+                product === "0" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={redjordan}
+              alt="shoes"
+            />
+            <img
+              className={
+                product === "1" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={blackdc}
+              alt="DC black sheos"
+            />
+            <img
+              className={
+                product === "2" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={greydc}
+              alt="DC grey sheos"
+            />
+            <img
+              className={
+                product === "3" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={redblack}
+              alt="red black sheos"
+            />
             <Row className="mt-3">
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
-                  className="similar-shoes"
+                  onClick={() => setproduct("1")}
+                  className="similar-shoes pointer"
                   src={blackdc}
                   alt="DC black sheos"
                 />
               </Col>
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
-                  className="similar-shoes"
+                  onClick={() => setproduct("0")}
+                  className="similar-shoes pointer"
                   src={redjordan2}
                   alt="red Jordan sheos"
                 />
               </Col>
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
-                  className="similar-shoes"
+                  onClick={() => setproduct("2")}
+                  className="similar-shoes pointer"
                   src={greydc}
                   alt="DC grey sheos"
                 />
               </Col>
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
-                  className="similar-shoes"
+                  onClick={() => setproduct("3")}
+                  className="similar-shoes pointer"
                   src={redblack}
                   alt="red black sheos"
                 />
@@ -75,11 +124,21 @@ const ProductDetail = () => {
             <div className="d-flex">
               <p className="mb-0 ff-poppins fw_medium fs-md pt-2">Qty: </p>
               <div className="d-flex align-items-center justify-content-center gap-3 ms-3 quantity-box">
-                <p className="mb-0 color-light-black fs-md">-</p>
-                <p className="mb-0 color-light-black fs-md">1</p>
-                <p className="mb-0 color-light-black fs-md">+</p>
+                <button
+                  onClick={subtract}
+                  className="mb-0 color-light-black fs-md border-0 bg-transparent"
+                >
+                  -
+                </button>
+                <p className="mb-0 color-light-black fs-md">{quantity}</p>
+                <button
+                  onClick={add}
+                  className="mb-0 color-light-black fs-md border-0 bg-transparent"
+                >
+                  +
+                </button>
               </div>
-              <button className="bg-color-green rounded-5 fw_medium ff-poppins btn-add-to-art ms-3 fs-md text-white">
+              <button className="bg-color-green btns-hover rounded-5 fw_medium ff-poppins btn-add-to-art ms-3 fs-md text-white">
                 Add to Cart
               </button>
             </div>
@@ -104,16 +163,16 @@ const ProductDetail = () => {
             <div className="d-flex mt-3 align-items-center">
               <p className="mb-0 ff-poppins fw_medium fs-md pt-2">Color: </p>
               <div className="d-flex align-items-center ms-3 ps-2 mt-2 gap-2">
-                <div className="p-1 color-box-container d-flex align-items-center justify-content-center">
+                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
                   <div className="red-box"></div>
                 </div>
-                <div className="p-1 color-box-container d-flex align-items-center justify-content-center">
+                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
                   <div className="pastel-box"></div>
                 </div>
-                <div className="p-1 color-box-container d-flex align-items-center justify-content-center">
+                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
                   <div className="black-box"></div>
                 </div>
-                <div className="p-1 color-box-container d-flex align-items-center justify-content-center">
+                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
                   <div className="grey-box"></div>
                 </div>
               </div>
@@ -130,22 +189,43 @@ const ProductDetail = () => {
             </div>
             <hr className="border-1 opacity-5 mt-4" />
             <div className="d-flex align-items-center gap-4">
-              <img width={22} height={22} src={sharelogo} alt="sharelogo" />
-              <img
-                width={22}
-                height={22}
-                className="ms-3"
-                src={facebooklogo}
-                alt="facebooklogo"
-              />
-              <img width={22} height={18} src={twitterlogo} alt="twitterlogo" />
-              <img
-                width={22}
-                height={22}
-                src={pinterestlogo}
-                alt="pinterestlogo"
-              />
-              <img width={28} height={28} src={googlelogo} alt="googlelogo" />
+              <a href="#">
+                <img width={22} height={22} src={sharelogo} alt="sharelogo" />
+              </a>
+              <a href="#">
+                <img
+                  width={22}
+                  height={22}
+                  className="ms-3"
+                  src={facebooklogo}
+                  alt="facebooklogo"
+                />
+              </a>
+              <a href="#">
+                <img
+                  width={22}
+                  height={18}
+                  src={twitterlogo}
+                  alt="twitterlogo"
+                />
+              </a>
+              <a href="#">
+                <img
+                  width={22}
+                  height={22}
+                  src={pinterestlogo}
+                  alt="pinterestlogo"
+                />
+              </a>
+              <a href="#">
+                <img
+                  className="pt-1"
+                  width={28}
+                  height={28}
+                  src={googlelogo}
+                  alt="googlelogo"
+                />
+              </a>
             </div>
           </Col>
         </Row>

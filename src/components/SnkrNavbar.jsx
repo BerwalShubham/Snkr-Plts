@@ -93,7 +93,10 @@ const SnkrNavbar = () => {
             </li>
           </ul>
           <div className="text-end d-lg-none">
-            <button className="hamburger" onClick={() => setnav(!nav)}>
+            <button
+              className={nav === true ? "hamburger" : "hamburger-2"}
+              onClick={() => setnav(!nav)}
+            >
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>

@@ -8,8 +8,12 @@ const Banner = () => {
     <section className="py-2">
       <Container>
         <div className="d-flex align-items-center justify-content-between">
-          <img className="logo" src={logo} alt="logo" />
-          <img className="ps-2 banner" src={banner} alt="" />
+          <a href="#">
+            <img className="logo" src={logo} alt="logo" />
+          </a>
+          <a href="#">
+            <img className="ps-2 banner" src={banner} alt="" />
+          </a>
         </div>
       </Container>
     </section>

@@ -15,6 +15,7 @@
   font-family: "Roboto", sans-serif;
 }
 :root {
+  --fs-xxsm: 10px;
   --fs-xsm: 12px;
   --fs-sm: 14px;
   --fs-md: 16px;
@@ -24,12 +25,20 @@
 
   --color-light-dark: #555555;
   --color-green: #28a745;
+  --color-blue: #007bff;
+  --color-red: #ff0000;
+  --color-orange: #ff4400;
+  --color-black: #0d0d0d;
+  --color-black-2: #171717;
+  --color-light-black-2: rgba(0, 0, 0, 0.7);
 }
 
 .fw_medium {
   font-weight: 500;
 }
-
+.fs-xxsm {
+  font-size: var(--fs-xxsm);
+}
 .fs-xsm {
   font-size: var(--fs-xsm);
 }
@@ -56,9 +65,28 @@
 .bg-color-green {
   background-color: var(--color-green);
 }
+.color-blue {
+  color: var(--color-blue);
+}
+.color-red {
+  color: var(--color-red);
+}
+.color-orange {
+  color: var(--color-orange);
+}
+.bg-color-black {
+  background-color: var(--color-black);
+}
+.bg-color-black-2 {
+  background-color: var(--color-black-2);
+}
+.color-light-black-2 {
+  color: var(--color-light-black-2);
+}
 /* ---- */
 @media (min-width: 576px) {
   :root {
+    --fs-xxsm: 10px;
     --fs-xsm: 14px;
     --fs-sm: 16px;
     --fs-md: 18px;
@@ -70,6 +98,7 @@
 
 @media (min-width: 1400px) {
   :root {
+    --fs-xxsm: 10px;
     --fs-xsm: 16px;
     --fs-sm: 18px;
     --fs-md: 20px;
