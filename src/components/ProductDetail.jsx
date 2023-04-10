@@ -16,10 +16,14 @@ import star from "../assets/svg/star.svg";
 import blackjordan from "../assets/png/blackjordan.jpg";
 import taupejordan from "../assets/png/taupejordan.jpg";
 import greyjordan from "../assets/png/greyjordan.jpg";
+import reddg from "../assets/png/reddgshoes.webp";
+import greydg from "../assets/png/greydgshoes.webp";
+import browndg from "../assets/png/browndgshoes.webp";
 
 const ProductDetail = () => {
   const [quantity, setquantity] = useState(1);
   const [product, setproduct] = useState("0");
+  const [productcolor, setproductcolor] = useState(0);
 
   let add = () => {
     setquantity(quantity + 1);
@@ -43,20 +47,6 @@ const ProductDetail = () => {
           <Col xxl={6} xl={5} className="text-center text-xl-start">
             <img
               className={
-                product === "0" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={redjordan}
-              alt="shoes"
-            />
-            <img
-              className={
-                product === "1" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={blackdc}
-              alt="DC black sheos"
-            />
-            <img
-              className={
                 product === "2" ? "d-inline-block red-jordan" : "d-none"
               }
               src={greydc}
@@ -69,34 +59,81 @@ const ProductDetail = () => {
               src={redblack}
               alt="red black sheos"
             />
-            <img
-              className={
-                product === "4" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={redjordan}
-              alt="shoes"
-            />
-            <img
-              className={
-                product === "5" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={taupejordan}
-              alt="red black sheos"
-            />
-            <img
-              className={
-                product === "6" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={blackjordan}
-              alt="red black sheos"
-            />
-            <img
-              className={
-                product === "7" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={greyjordan}
-              alt="red black sheos"
-            />
+            <div>
+              <img
+                className={
+                  product === "0" && productcolor === 0
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={redjordan}
+                alt="shoes"
+              />
+              <img
+                className={
+                  product === "0" && productcolor === 1
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={taupejordan}
+                alt="red black sheos"
+              />
+              <img
+                className={
+                  product === "0" && productcolor === 2
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={blackjordan}
+                alt="red black sheos"
+              />
+              <img
+                className={
+                  product === "0" && productcolor === 3
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={greyjordan}
+                alt="red black sheos"
+              />
+              <img
+                className={
+                  product === "1" && productcolor === 2
+                    ? "d-inline-block red-jordan"
+                    : "d-none" 
+                }
+                src={blackdc}
+                alt="DC black sheos"
+              />
+              <img
+                className={
+                  product === "1" && productcolor === 0
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={reddg}
+                alt="red black sheos"
+              />
+              <img
+                className={
+                  product === "1" && productcolor === 1
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={browndg}
+                alt="red black sheos"
+              />
+              
+              <img
+                className={
+                  product === "1" && productcolor === 3
+                    ? "d-inline-block red-jordan"
+                    : "d-none"
+                }
+                src={greydg}
+                alt="red black sheos"
+              />
+            </div>
             <Row className="mt-3">
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
@@ -195,25 +232,25 @@ const ProductDetail = () => {
               <p className="mb-0 ff-poppins fw_medium fs-md pt-2">Color: </p>
               <div className="d-flex align-items-center ms-3 ps-2 mt-2 gap-2">
                 <div
-                  onClick={() => setproduct("4")}
+                  onClick={() => setproductcolor(0)}
                   className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
                 >
                   <div className="red-box"></div>
                 </div>
                 <div
-                  onClick={() => setproduct("5")}
+                  onClick={() => setproductcolor(1)}
                   className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
                 >
                   <div className="pastel-box"></div>
                 </div>
                 <div
-                  onClick={() => setproduct("6")}
+                  onClick={() => setproductcolor(2)}
                   className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
                 >
                   <div className="black-box"></div>
                 </div>
                 <div
-                  onClick={() => setproduct("7")}
+                  onClick={() => setproductcolor(3)}
                   className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
                 >
                   <div className="grey-box"></div>
