@@ -189,10 +189,11 @@ const ProductDetail = () => {
             </div>
             <hr className="border-1 opacity-5 mt-4" />
             <div className="d-flex align-items-center gap-4">
-              <a href="#">
+              <a className="social-sites-logo" href="#">
+              
                 <img width={22} height={22} src={sharelogo} alt="sharelogo" />
               </a>
-              <a href="#">
+              <a className="social-sites-logo" href="#">
                 <img
                   width={22}
                   height={22}
@@ -201,7 +202,7 @@ const ProductDetail = () => {
                   alt="facebooklogo"
                 />
               </a>
-              <a href="#">
+              <a className="social-sites-logo" href="#">
                 <img
                   width={22}
                   height={18}
@@ -209,7 +210,7 @@ const ProductDetail = () => {
                   alt="twitterlogo"
                 />
               </a>
-              <a href="#">
+              <a className="social-sites-logo" href="#">
                 <img
                   width={22}
                   height={22}
@@ -217,7 +218,7 @@ const ProductDetail = () => {
                   alt="pinterestlogo"
                 />
               </a>
-              <a href="#">
+              <a className="social-sites-logo" href="#">
                 <img
                   className="pt-1"
                   width={28}
