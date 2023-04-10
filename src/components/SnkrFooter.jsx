@@ -36,7 +36,7 @@ const SnkrFooter = () => {
           <Col xl={8}>
             <Row>
               <Col md={3} sm={4} xs={6}>
-                <ul className="mt-5 pt-4 ps-0">
+                <ul className="mt-xl-5 pt-4 ps-0">
                   <li className="ff-poppins fw-semibold fs-sm text-white pt-2">
                     CUSTOM LINKS
                   </li>
@@ -59,7 +59,7 @@ const SnkrFooter = () => {
                 </ul>
               </Col>
               <Col md={3} sm={4} xs={6}>
-                <ul className="mt-5 pt-4 ps-0">
+                <ul className="mt-xl-5 pt-4 ps-0">
                   <li className="ff-poppins fw-semibold fs-sm text-white pt-2">
                     PRODUCTS
                   </li>
@@ -90,7 +90,7 @@ const SnkrFooter = () => {
                 </ul>
               </Col>
               <Col md={3} sm={4} xs={6}>
-                <ul className="mt-5 pt-4 ps-0">
+                <ul className="mt-xl-5 pt-4 ps-0">
                   <li className="ff-poppins fw-semibold fs-sm text-white pt-2">
                     OUR COMPANY
                   </li>
@@ -113,7 +113,7 @@ const SnkrFooter = () => {
                 </ul>
               </Col>
               <Col md={3} sm={4} xs={6}>
-                <ul className="mt-5 pt-4 ps-0">
+                <ul className="mt-xl-5 pt-4 ps-0">
                   <li className="ff-poppins fw-semibold fs-sm text-white pt-2">
                     YOUR ACCOUNT
                   </li>

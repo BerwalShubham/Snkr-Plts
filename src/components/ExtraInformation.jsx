@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import Slider from "react-slick";
 
 const ExtraInformation = () => {
   const [navtab, setnavtab] = useState("0");

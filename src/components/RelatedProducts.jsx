@@ -215,9 +215,12 @@ const RelatedProducts = () => {
             <p className="mb-0 ff-poppins fw-semibold fs-lg">3</p>
           </li>
           <button
-            id="next-page"
             onClick={() => setcurrentPage(currentPage + 1)}
-            className="ff-poppins fs-xsm color-light-black px-3 py-2 btn-next"
+            className={
+              currentPage === 2
+                ? "d-none"
+                : "ff-poppins fs-xsm color-light-black px-3 py-2 btn-next d-block"
+            }
           >
             Next &#62; &#62;
           </button>
