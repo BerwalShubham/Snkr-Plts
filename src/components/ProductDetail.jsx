@@ -13,6 +13,9 @@ import blackdc from "../assets/png/blackDc.png";
 import greydc from "../assets/png/greyDc.png";
 import redblack from "../assets/png/redBlackshoes.png";
 import star from "../assets/svg/star.svg";
+import blackjordan from "../assets/png/blackjordan.jpg";
+import taupejordan from "../assets/png/taupejordan.jpg";
+import greyjordan from "../assets/png/greyjordan.jpg";
 
 const ProductDetail = () => {
   const [quantity, setquantity] = useState(1);
@@ -64,6 +67,34 @@ const ProductDetail = () => {
                 product === "3" ? "d-inline-block red-jordan" : "d-none"
               }
               src={redblack}
+              alt="red black sheos"
+            />
+            <img
+              className={
+                product === "4" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={redjordan}
+              alt="shoes"
+            />
+            <img
+              className={
+                product === "5" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={taupejordan}
+              alt="red black sheos"
+            />
+            <img
+              className={
+                product === "6" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={blackjordan}
+              alt="red black sheos"
+            />
+            <img
+              className={
+                product === "7" ? "d-inline-block red-jordan" : "d-none"
+              }
+              src={greyjordan}
               alt="red black sheos"
             />
             <Row className="mt-3">
@@ -163,16 +194,28 @@ const ProductDetail = () => {
             <div className="d-flex mt-3 align-items-center">
               <p className="mb-0 ff-poppins fw_medium fs-md pt-2">Color: </p>
               <div className="d-flex align-items-center ms-3 ps-2 mt-2 gap-2">
-                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
+                <div
+                  onClick={() => setproduct("4")}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
                   <div className="red-box"></div>
                 </div>
-                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
+                <div
+                  onClick={() => setproduct("5")}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
                   <div className="pastel-box"></div>
                 </div>
-                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
+                <div
+                  onClick={() => setproduct("6")}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
                   <div className="black-box"></div>
                 </div>
-                <div className="p-1 pointer color-box-container d-flex align-items-center justify-content-center">
+                <div
+                  onClick={() => setproduct("7")}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
                   <div className="grey-box"></div>
                 </div>
               </div>
@@ -190,7 +233,6 @@ const ProductDetail = () => {
             <hr className="border-1 opacity-5 mt-4" />
             <div className="d-flex align-items-center gap-4">
               <a className="social-sites-logo" href="#">
-              
                 <img width={22} height={22} src={sharelogo} alt="sharelogo" />
               </a>
               <a className="social-sites-logo" href="#">
