@@ -15,9 +15,9 @@ const SideStep = () => {
           You can buy the Nike Air Max 97 Men's Shoe - White here:
         </h2>
         <Row className="mt-3">
-          {nikeairmax.map((value) => {
+          {nikeairmax.map((value, i) => {
             return (
-              <div className="col-xl-3 col-lg-4 col-sm-6 mt-4">
+              <div key={i} className="col-xl-3 col-lg-4 col-sm-6 mt-4">
                 <div className="nike-air-max-card">
                   <div>
                     <img className="w-100" src={value.img} alt="footlocker" />

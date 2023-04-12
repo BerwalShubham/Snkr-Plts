@@ -19,38 +19,39 @@ const SnkrNavbar = () => {
                 : "nav-open d-lg-none p-0"
             }
           >
-            <li>
-              <a className="text-black ff-robot fs-sm d-none" href="#">
-                HOME
-              </a>
-            </li>
             <li className="mt-3">
-              <a className="text-black ff-robot fs-sm d-sm-none" href="#">
-                SNEAKERS KOPEN
-              </a>
-            </li>
-            <li>
-              <a className="text-black ff-robot fs-sm d-none" href="#">
-                INTERVIEWS
-              </a>
-            </li>
-            <li className="mt-3">
-              <a className="text-black ff-robot fs-sm" href="#">
+              <a
+                onClick={() => setnav(true)}
+                className="text-black ff-robot fs-sm"
+                href="#related-products"
+              >
                 SALE
               </a>
             </li>
             <li className="mt-3">
-              <a className="text-black ff-robot fs-sm" href="#">
+              <a
+                onClick={() => setnav(true)}
+                className="text-black ff-robot fs-sm"
+                href="#related-products"
+              >
                 SNEAKER VAN DE DAG
               </a>
             </li>
             <li className="mt-3">
-              <a className="text-black ff-robot fs-sm" href="#">
+              <a
+                onClick={() => setnav(true)}
+                className="text-black ff-robot fs-sm"
+                href="#related-products"
+              >
                 SNEAKER FORUM
               </a>
             </li>
             <li className="mt-3">
-              <a className="text-black ff-robot fs-sm" href="#">
+              <a
+                onClick={() => setnav(true)}
+                className="text-black ff-robot fs-sm"
+                href="#related-products"
+              >
                 BLOG
               </a>
             </li>

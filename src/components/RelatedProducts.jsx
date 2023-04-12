@@ -38,7 +38,7 @@ const RelatedProducts = () => {
     ],
   };
   return (
-    <section className="py-5 overflow-hidden">
+    <section id="related-products" className="py-5 overflow-hidden">
       <Container>
         <h2 className="ff-poppins fw-semibold fs-xxl">RELATED PRODUCT</h2>
         <Slider className="mt-4 pt-2" {...settings}>
@@ -49,7 +49,7 @@ const RelatedProducts = () => {
                 data-aos-duration="800"
                 className="px-2 pb-1"
               >
-                <div className="related-products-cards">
+                <div className="related-products-cards pointer">
                   <img className="w-100" src={val.img} alt="shoes" />
                   <div className="px-2 py-4">
                     <div className="d-flex align-items-center justify-content-between">
@@ -120,7 +120,7 @@ const RelatedProducts = () => {
                 data-aos-duration="1000"
                 className=" mt-4 px-2"
               >
-                <div className="related-products-cards">
+                <div className="related-products-cards related-products-card-1 pointer">
                   <img className="w-100" src={val.img} alt="shoes" />
                   <div className="px-2 py-4">
                     <div className="d-flex align-items-center justify-content-between">

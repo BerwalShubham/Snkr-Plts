@@ -24,6 +24,7 @@ const ProductDetail = () => {
   const [quantity, setquantity] = useState(1);
   const [product, setproduct] = useState("0");
   const [productcolor, setproductcolor] = useState(0);
+  const [productcolordg, setproductcolordg] = useState(0);
 
   let add = () => {
     setquantity(quantity + 1);
@@ -35,6 +36,7 @@ const ProductDetail = () => {
       setquantity(quantity - 1);
     }
   };
+
   return (
     <section className="py-5 overflow_hide">
       <Container>
@@ -45,21 +47,21 @@ const ProductDetail = () => {
           className="align-items-center"
         >
           <Col xxl={6} xl={5} className="text-center text-xl-start">
-            <img
-              className={
-                product === "2" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={greydc}
-              alt="DC grey sheos"
-            />
-            <img
-              className={
-                product === "3" ? "d-inline-block red-jordan" : "d-none"
-              }
-              src={redblack}
-              alt="red black sheos"
-            />
             <div>
+              <img
+                className={
+                  product === "2" ? "d-inline-block red-jordan" : "d-none"
+                }
+                src={greydc}
+                alt="DC grey sheos"
+              />
+              <img
+                className={
+                  product === "3" ? "d-inline-block red-jordan" : "d-none"
+                }
+                src={redblack}
+                alt="red black sheos"
+              />
               <img
                 className={
                   product === "0" && productcolor === 0
@@ -98,16 +100,16 @@ const ProductDetail = () => {
               />
               <img
                 className={
-                  product === "1" && productcolor === 2
+                  product === "1" && productcolordg === 0
                     ? "d-inline-block red-jordan"
-                    : "d-none" 
+                    : "d-none"
                 }
                 src={blackdc}
                 alt="DC black sheos"
               />
               <img
                 className={
-                  product === "1" && productcolor === 0
+                  product === "1" && productcolordg === 2
                     ? "d-inline-block red-jordan"
                     : "d-none"
                 }
@@ -116,17 +118,16 @@ const ProductDetail = () => {
               />
               <img
                 className={
-                  product === "1" && productcolor === 1
+                  product === "1" && productcolordg === 1
                     ? "d-inline-block red-jordan"
                     : "d-none"
                 }
                 src={browndg}
                 alt="red black sheos"
               />
-              
               <img
                 className={
-                  product === "1" && productcolor === 3
+                  product === "1" && productcolordg === 3
                     ? "d-inline-block red-jordan"
                     : "d-none"
                 }
@@ -134,7 +135,7 @@ const ProductDetail = () => {
                 alt="red black sheos"
               />
             </div>
-            <Row className="mt-3">
+            <Row className="mt-3 px-1 px-xxl-0 pe-xxl-3">
               <Col className="px-1 px-sm-2" xs={3}>
                 <img
                   onClick={() => setproduct("1")}
@@ -210,7 +211,7 @@ const ProductDetail = () => {
                 Add to Cart
               </button>
             </div>
-            <div className="selectdiv mt-3">
+            <div className="select mt-3">
               <label
                 className="mb-0 ff-poppins fw_medium fs-md pt-2"
                 for="shoe size"
@@ -218,7 +219,7 @@ const ProductDetail = () => {
                 Size:
               </label>
               <select
-                className="size-box rounded-5 ms-3 ps-3 ff-josefin fs-md pt-1 shoes"
+                className="size-box rounded-5 ms-3 ps-3 ff-josefin fs-md pt-1 pointer"
                 name="size"
                 id="size"
               >
@@ -230,7 +231,13 @@ const ProductDetail = () => {
             </div>
             <div className="d-flex mt-3 align-items-center">
               <p className="mb-0 ff-poppins fw_medium fs-md pt-2">Color: </p>
-              <div className="d-flex align-items-center ms-3 ps-2 mt-2 gap-2">
+              <div
+                className={
+                  product === "1"
+                    ? "d-none"
+                    : "d-flex align-items-center ms-3 ps-2 mt-2 gap-2"
+                }
+              >
                 <div
                   onClick={() => setproductcolor(0)}
                   className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
@@ -256,13 +263,45 @@ const ProductDetail = () => {
                   <div className="grey-box"></div>
                 </div>
               </div>
+              <div
+                className={
+                  product === "1"
+                    ? "d-flex align-items-center ms-3 ps-2 mt-2 gap-2"
+                    : "d-none"
+                }
+              >
+                <div
+                  onClick={() => setproductcolordg(2)}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
+                  <div className="red-box"></div>
+                </div>
+                <div
+                  onClick={() => setproductcolordg(1)}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
+                  <div className="pastel-box"></div>
+                </div>
+                <div
+                  onClick={() => setproductcolordg(0)}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
+                  <div className="black-box"></div>
+                </div>
+                <div
+                  onClick={() => setproductcolordg(3)}
+                  className="p-1 pointer color-box-container d-flex align-items-center justify-content-center"
+                >
+                  <div className="grey-box"></div>
+                </div>
+              </div>
             </div>
             <div className="d-flex align-items-center gap-5 mt-3">
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center pointer">
                 <img src={comparelogo} alt="compare" />
                 <p className="mb-0 ff-poppins fw-light ps-1 fs-xsm">Compare</p>
               </div>
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center pointer">
                 <img src={wishlistlogo} alt="compare" />
                 <p className="mb-0 ff-poppins fw-light ps-1 fs-xsm">Wishlist</p>
               </div>
